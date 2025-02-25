@@ -2,7 +2,7 @@
 Examples To Follow Along AI Webinar of Feb 26, 2025
 
 ## Vectors:
-    ```Shell
+    ```
     CREATE TABLE vectortable (txt VARCHAR(1000), vec VECTOR(FLOAT, 2))
     ```
 
