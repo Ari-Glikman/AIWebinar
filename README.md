@@ -49,6 +49,7 @@ Insert Toyota Review
     INSERT INTO Embedding.CarExample (CarReview, MagazineName) VALUES ('Toyota is a world class car company.', 'Fake Car Magazine 1')
 
 Insert Honda Review
+
     INSERT INTO Embedding.CarExample (CarReview, MagazineName) VALUES ('The Honda is extremely reliable.', 'Fake Car Magazine 2')
 
 Insert Yugo Review
