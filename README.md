@@ -2,9 +2,9 @@
 Examples To Follow Along AI Webinar of Feb 26, 2025
 
 ## Vectors:
-    ```
+    
     CREATE TABLE vectortable (txt VARCHAR(1000), vec VECTOR(FLOAT, 2))
-    ```
+    
 
 INSERT INTO vectortable VALUES ('our first vector', TO_VECTOR('1,0', FLOAT))
 
