@@ -18,13 +18,13 @@ Examples To Follow Along AI Webinar of Feb 26, 2025
 ## Vector Search:
 
     INSERT INTO %Embedding.Config (Name, Configuration, EmbeddingClass, VectorLength, Description)
-  VALUES ('my-openai-config', 
-          '{"apiKey":"<api key>", 
-            "sslConfig": "llm_ssl", 
-            "modelName": "text-embedding-3-small"}',
-          '%Embedding.OpenAI', 
-          1536,  
-          'a small embedding model provided by OpenAI') 
+      VALUES ('my-openai-config', 
+              '{"apiKey":"<api key>", 
+                "sslConfig": "llm_ssl", 
+                "modelName": "text-embedding-3-small"}',
+              '%Embedding.OpenAI', 
+              1536,  
+              'a small embedding model provided by OpenAI') 
 
     SELECT EMBEDDING('Our second embedding.','my-openai-config')
 
