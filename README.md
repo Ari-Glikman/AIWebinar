@@ -8,18 +8,24 @@ Create a table for our Vector DB:
 
 
 Insert vector [1,0] 
+
     INSERT INTO vectortable VALUES ('our first vector', TO_VECTOR('1,0', FLOAT))
 
 Insert vector [0,1]
+
     INSERT INTO vectortable VALUES ('our second vector', TO_VECTOR('0,1', FLOAT))
+
+Use Dot Product for Vector Search
 
     SELECT TOP 2 vectortable.txt,VECTOR_DOT_PRODUCT(vec, TO_VECTOR('1,0', FLOAT)) AS similarity FROM vectortable ORDER BY similarity DESC
 
-## Embeddings:
+## Embedding From Code (SQL Procedure):
 
     SELECT AIWebinar.EmbeddingDemo_GetEncoding('Our First Embedding')
 
-## Vector Search:
+## Vector Search with Embedding Data Type:
+
+Declare Embedding:
 
     INSERT INTO %Embedding.Config (Name, Configuration, EmbeddingClass, VectorLength, Description)
       VALUES ('my-openai-config', 
@@ -30,17 +36,25 @@ Insert vector [0,1]
               1536,  
               'a small embedding model provided by OpenAI') 
 
+Embedding from Embedding Data Type
+    
     SELECT EMBEDDING('Our second embedding.','my-openai-config')
 
-    CREATE TABLE Embedding.CarExample (CarReview VARCHAR(200),MagazineName VARCHAR(30),CarReviewEmbedding EMBEDDING('my-openai-config','CarReview'), NameEmbedding EMBEDDING('my-openai-config','MagazineName') )
+Create Table for Embedding Demo
 
-    INSERT INTO Embedding.CarExample (CarReview, MagazineName)
-VALUES ('Toyota is a world class car company.', 'Fake Car Magazine 1')
+    CREATE TABLE Embedding.CarExample (CarReview VARCHAR(200),MagazineName VARCHAR(30),CarReviewEmbedding EMBEDDING('my-      openai-config','CarReview'), NameEmbedding EMBEDDING('my-openai-config','MagazineName') )
 
-    INSERT INTO Embedding.CarExample (CarReview, MagazineName)
-VALUES ('The Honda is extremely reliable.', 'Fake Car Magazine 2')
+Insert Toyota Review
 
-    INSERT INTO Embedding.CarExample (CarReview, MagazineName)
-VALUES ('The Yugo, though cheap, may have been one of the worst cars ever made.', 'Fake Car Magazine 3')
+    INSERT INTO Embedding.CarExample (CarReview, MagazineName) VALUES ('Toyota is a world class car company.', 'Fake Car Magazine 1')
+
+Insert Honda Review
+    INSERT INTO Embedding.CarExample (CarReview, MagazineName) VALUES ('The Honda is extremely reliable.', 'Fake Car Magazine 2')
+
+Insert Yugo Review
+
+    INSERT INTO Embedding.CarExample (CarReview, MagazineName) VALUES ('The Yugo, though cheap, may have been one of the worst cars ever made.', 'Fake Car Magazine 3')
+
+Use a Vector Search with Embedding Data Type
 
     SELECT TOP 2 CarReview FROM Embedding.CarExample ORDER BY VECTOR_DOT_PRODUCT(CarReviewEmbedding, EMBEDDING(?)) DESC
