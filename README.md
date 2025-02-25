@@ -4,13 +4,12 @@ Examples To Follow Along AI Webinar of Feb 26, 2025
 ## Vectors:
     
     CREATE TABLE vectortable (txt VARCHAR(1000), vec VECTOR(FLOAT, 2))
-    
 
-INSERT INTO vectortable VALUES ('our first vector', TO_VECTOR('1,0', FLOAT))
+    INSERT INTO vectortable VALUES ('our first vector', TO_VECTOR('1,0', FLOAT))
 
-INSERT INTO vectortable VALUES ('our second vector', TO_VECTOR('0,1', FLOAT))
+    INSERT INTO vectortable VALUES ('our second vector', TO_VECTOR('0,1', FLOAT))
 
-SELECT TOP 2 vectortable.txt,VECTOR_DOT_PRODUCT(vec, TO_VECTOR('1,0', FLOAT)) AS similarity FROM vectortable ORDER BY similarity DESC
+    SELECT TOP 2 vectortable.txt,VECTOR_DOT_PRODUCT(vec, TO_VECTOR('1,0', FLOAT)) AS similarity FROM vectortable ORDER BY similarity DESC
 
 ## Embeddings:
 
