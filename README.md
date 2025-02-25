@@ -2,11 +2,15 @@
 Examples To Follow Along AI Webinar of Feb 26, 2025
 
 ## Vectors:
-    
+Create a table for our Vector DB:
+
     CREATE TABLE vectortable (txt VARCHAR(1000), vec VECTOR(FLOAT, 2))
 
+
+Insert vector [1,0] 
     INSERT INTO vectortable VALUES ('our first vector', TO_VECTOR('1,0', FLOAT))
 
+Insert vector [0,1]
     INSERT INTO vectortable VALUES ('our second vector', TO_VECTOR('0,1', FLOAT))
 
     SELECT TOP 2 vectortable.txt,VECTOR_DOT_PRODUCT(vec, TO_VECTOR('1,0', FLOAT)) AS similarity FROM vectortable ORDER BY similarity DESC
