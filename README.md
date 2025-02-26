@@ -65,4 +65,5 @@ Use a Vector Search with Embedding Data Type
 
 ### Hybrid Search
 [Pre-Requirement for Hybrid Search](https://github.com/Ari-Glikman/AIWebinar/blob/main/Jupyter%20Notebook/sql_demo.ipynb)
+
 [Hybrid Search](https://github.com/Ari-Glikman/AIWebinar/blob/main/Jupyter%20Notebook/sql_demo.ipynb)
