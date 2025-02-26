@@ -54,6 +54,8 @@ Insert Honda Review
 
 Insert Yugo Review
 
+![images](https://github.com/user-attachments/assets/8710f94a-0a86-45ce-b02d-295756294c2a)
+
     INSERT INTO Embedding.CarExample (CarReview, MagazineName) VALUES ('The Yugo, though cheap, may have been one of the worst cars ever made.', 'Fake Car Magazine 3')
 
 Use a Vector Search with Embedding Data Type
