@@ -59,3 +59,9 @@ Insert Yugo Review
 Use a Vector Search with Embedding Data Type
 
     SELECT TOP 2 CarReview FROM Embedding.CarExample ORDER BY VECTOR_DOT_PRODUCT(CarReviewEmbedding, EMBEDDING(?)) DESC
+
+### [RAG Demo](https://github.com/Ari-Glikman/AIWebinar/blob/main/Jupyter%20Notebook/langchain-rag.ipynb)
+
+### [Requirement for Hybrid Search](https://github.com/Ari-Glikman/AIWebinar/blob/main/Jupyter%20Notebook/sql_demo.ipynb)
+
+### [Hybrid Search](https://github.com/Ari-Glikman/AIWebinar/blob/main/Jupyter%20Notebook/sql_demo.ipynb)
