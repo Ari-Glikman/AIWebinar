@@ -42,7 +42,7 @@ Embedding from Embedding Data Type
 
 Create Table for Embedding Demo
 
-    CREATE TABLE Embedding.CarExample (CarReview VARCHAR(200),MagazineName VARCHAR(30),CarReviewEmbedding EMBEDDING('my-openai-config','CarReview'), NameEmbedding EMBEDDING('my-openai-config','MagazineName') )
+    CREATE TABLE Embedding.CarExample (CarReview VARCHAR(200),MagazineName VARCHAR(30),CarReviewEmbedding EMBEDDING('my-openai-config','CarReview'), MagazineNameEmbedding EMBEDDING('my-openai-config','MagazineName') )
 
 Insert Toyota Review
 
